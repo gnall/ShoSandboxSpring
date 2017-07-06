@@ -18,6 +18,11 @@ public class MyController {
 
 	private static final Logger logger = LoggerFactory.getLogger(MyController.class);
 
+	@RequestMapping(value = "/geoLocation", method = RequestMethod.GET)
+	public String geoLocationGet() {
+		return "geoLoc";
+	}
+	
 	@RequestMapping(value = "/uploadFile", method = RequestMethod.GET)
 	public String uploadPageGet() {
 		return "index";
