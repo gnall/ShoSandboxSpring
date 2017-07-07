@@ -62,15 +62,26 @@
 
 	<build>
 		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-			<plugin>
-      			<groupId>com.google.appengine</groupId>
-      			<artifactId>appengine-maven-plugin</artifactId>
-      			<version>1.9.54</version>
-  			</plugin>
+			 <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>integration-test</goal>
+                            <goal>verify</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+        		<groupId>com.google.cloud.tools</groupId>
+        		<artifactId>appengine-maven-plugin</artifactId>
+        		<version>1.2.1</version>
+      		</plugin>
 		</plugins>
 	</build>
 
